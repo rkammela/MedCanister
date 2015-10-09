@@ -1,89 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b279fc8c-7dde-42e7-a734-e50f8b5656a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/History List.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fullpage.css" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\fonts\Roboto-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\fonts\Roboto-Medium.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\fonts\Roboto-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\2000px-Blue_pill_container_spilled_icon.svg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\222.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Canister Logo.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Canister Open Tilt.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Canister Open.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Canister Tilt.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Canister.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Pending Orange 2.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Pending Orange.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Rain.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\Sun.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\arw.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\attach.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\au.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\calender-arw.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\call.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\card1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\card2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\chek1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\chek2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\clock_face2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\clock_hour.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\clock_min.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\clock_sec.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\crs.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\er.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\free-vector-weather-icons-vector_019544_shutterstock_57368320.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic5.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic6.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\ic7.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\img1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\img2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\incmg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\medication-512.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\medication-512.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\mic.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\pic1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\pic2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\pic3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\pic4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\pic5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\play.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\plus.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\point.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\rd.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\rd2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\rd22.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\search1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\so.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\status.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\status2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\swt.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\swt2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\swt3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\thermometer_temperature_weather-512.xcf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\tic.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\tic2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\tic3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\top.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\images\weather-icons.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\index - Copy.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\media\Blue Browne.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\media\Blue Browne.ogg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\media\Georgia.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\media\Georgia.ogg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rajkammela\Documents\GitHub\MedTrack\MedTrack\w3layouts-License.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/History.html" afterPath="$PROJECT_DIR$/History.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Settings.html" afterPath="$PROJECT_DIR$/Settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-    </list>
+    <list default="true" id="b279fc8c-7dde-42e7-a734-e50f8b5656a0" name="Default" comment="" />
     <ignored path="MedTrack.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.090909">
-              <caret line="81" column="26" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.5660161">
+              <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -126,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Settings.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14601228">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -142,7 +60,7 @@
       <file leaf-file-name="History.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/History.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6981134">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding />
             </state>
@@ -152,7 +70,7 @@
       <file leaf-file-name="History List.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/History List.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.692307">
+            <state vertical-scroll-proportion="0.0">
               <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
               <folding />
             </state>
@@ -162,7 +80,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1034484">
+            <state vertical-scroll-proportion="0.0">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="105" />
               <folding />
             </state>
@@ -197,9 +115,9 @@
         <option value="$PROJECT_DIR$/Device.nut.js" />
         <option value="$PROJECT_DIR$/basic-views.html" />
         <option value="$PROJECT_DIR$/History List.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/History.html" />
         <option value="$PROJECT_DIR$/Settings.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -239,7 +157,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,7 +192,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,25 +266,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.112223394" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494577" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -387,6 +305,60 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="26" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/fullpage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="69" selection-start-line="2" selection-start-column="69" selection-end-line="2" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/History.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/History List.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -413,7 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="88" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -429,7 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="46" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -437,7 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="114" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -453,7 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="46" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -461,7 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="114" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -469,7 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -485,13 +451,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31228474">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/History List.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.692307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
           <folding />
         </state>
@@ -499,26 +464,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1034484">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.090909">
-          <caret line="81" column="26" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/History.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6981134">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           <folding />
         </state>
@@ -526,11 +480,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14601228">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5660161">
+          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
