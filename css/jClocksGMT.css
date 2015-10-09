@@ -1,0 +1,176 @@
+.clock_container {
+   width: 213px;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+	    box-shadow: 0px 3px 7px #888888;
+}
+.clock_container .lbl {
+    font-size:10px;
+    color: #333333;
+    line-height: 22px;
+    background: url(../images/clock_label.png);
+    text-align: center;
+    height: 27px;
+    width: 108px;
+    margin: 0 auto;
+}
+.clockHolder {
+    width:162px; 
+    margin:0 auto;
+    position:relative;
+	padding: 30px 0;
+}
+.sec {
+    display:block;
+    position:absolute;
+	left: 26%;
+    top: 26%;
+}
+.min {
+    display:block;
+    position:absolute;
+	left: 22.5%;
+    top: 26.5%;
+}
+.hour {
+    display:block;
+    position:absolute;
+	top: 22%;
+    left: 26%;
+}
+
+.rotatingWrapper {
+    position:absolute;
+    width:100px;
+    height:100px;
+    left: 5px;
+}
+.digital {
+    font-weight:bold;
+    font-size: 2em;
+    color: #fff;
+    text-align:center;
+	background:#ff1744;
+	padding:0.5em 0;
+}
+@media (max-width:1680px){
+
+}
+@media (max-width:1366px){
+.min {
+    left: 26%;
+    top: 30.5%;
+}
+.hour {
+    top: 25%;
+    left: 24%;
+}
+.sec {
+    left: 24%;
+    top: 27%;
+}
+}
+@media (max-width: 1080px){
+.digital {
+    font-size: 1.5em;
+}
+.clock_container {
+    width: 172px;
+}
+}
+@media (max-width: 1024px){
+.hour {
+    top: 33%;
+    left: 26%;
+}
+.min {
+    left: 27%;
+    top: 31.5%;
+}
+}
+@media (max-width: 991px){
+.clock_container {
+    width: 226px;
+}
+.hour {
+    top: 24%;
+    left: 22%;
+}
+.min {
+    left: 25%;
+    top: 30.5%;
+}
+.sec {
+    left: 23%;
+    top: 26%;
+}
+}
+@media (max-width: 800px){
+.min {
+    left: 25%;
+    top: 23.5%;
+}
+}
+@media (max-width: 768px){
+.sec {
+    left: 25%;
+    top: 30%;
+}
+.min {
+    left: 28%;
+    top: 26.5%;
+}
+}
+@media (max-width: 640px){
+.clock_container {
+    width: 218px;
+}
+.min {
+    left: 27%;
+    top: 30.5%;
+}
+}
+@media (max-width: 600px){
+.clock_container {
+    width: 194px;
+}
+.min {
+    left: 26%;
+    top: 22.5%;
+}
+}
+@media (max-width: 480px){
+.digital {
+    font-size: 1.3em;
+}
+.min {
+    left: 30%;
+    top: 27.5%;
+}
+.hour {
+    top: 22%;
+    left: 24%;
+}
+.sec {
+    top: 26%;
+    left: 24%;
+}
+}
+@media (max-width:320px){
+.clock_container {
+    width: 210px;
+}
+.hour {
+    top: 25%;
+    left: 23%;
+}
+.min {
+    left: 23%;
+    top: 27.5%;
+}
+.sec {
+    top: 31%;
+    left: 25%;
+}
+}

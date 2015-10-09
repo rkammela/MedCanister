@@ -1,0 +1,3 @@
+html,body{height:100%;}
+.wrapper{min-height:100%; position:relative}
+.full{position:absolute; top:0; left:0; width:1000px; height:1000px;}

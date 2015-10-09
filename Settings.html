@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+</head>
+<body>
+<!-- horizontal form -->
+<div class="form-horizontal ui-sortable" id="bform973135427" style="position: relative;">
+	<!-- text field -->
+	<div class="control-group" id="bgroup229145434">
+		<label class="control-label" for="txtmedname">
+			Medication Name:
+		</label>
+		<div class="controls">
+			<input id="txtmedname" type="text" placeholder="name of the medication">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup726165512">
+		<label class="control-label" for="txtvolume">
+			Volume:
+		</label>
+		<div class="controls">
+			<input id="txtvolume" type="number" min="1" max="500" placeholder="in mm">
+		</div>
+	</div>
+	<!-- date box -->
+	<div class="control-group" id="bdategroup801215833">
+		<label class="control-label" for="txtopenedon">
+			Bottle Opened On:
+		</label>
+		<div class="controls">
+			<input id="txtopenedon" type="date" data-role="date" placeholder="Choose Date">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup260175514" style="position: relative;">
+		<label class="control-label" for="txtexpiresindays">
+			Expires in:
+		</label>
+		<div class="controls">
+			<input id="txtexpiresindays" type="number" min="1" max="365" placeholder="how many days">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup829185515">
+		<label class="control-label" for="txtqty">
+			Dosage:
+		</label>
+		<div class="controls">
+			<input id="txtqty" type="number" min="1" max="50" placeholder="in mm">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup302195517">
+		<label class="control-label" for="txtwindowstart">
+			What time:
+		</label>
+		<div >
+			<input id="txtwindowstart" type="time"  placeholder="from">
+			<input id="txtwindowend" type="time"  placeholder="to">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup229145434">
+		<label class="control-label" for="txtlocation">
+			Location:
+		</label>
+		<div class="controls">
+			<input id="txtlocation" type="text" placeholder="Geographic location">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup229145434">
+		<label class="control-label" for="txtGPSCoordinates">
+			GPS Coordinates:
+		</label>
+		<div class="controls">
+			<input id="txtGPSCoordinates" type="text" placeholder="Latitude,Longitude">
+		</div>
+
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup229145434">
+		<label class="control-label" for="txttimezone">
+			Time Zone offset in seconds (UTC +/-):
+		</label>
+		<div class="controls">
+			<input id="txttimezone"  disabled="disabled"  type="number" min="-15" max="15" placeholder="difference to UTC">
+		</div>
+	</div>
+	<!-- text field -->
+	<div class="control-group" id="bgroup777225641">
+		<label class="control-label" for="txttimestamp">
+			Changed on:
+		</label>
+		<div class="controls">
+			<input disabled="disabled" id="txttimestamp" type="text" placeholder="">
+		</div>
+	</div>
+
+
+</div>
+<script>
+
+
+	var myDataRef = new Firebase('https://medtrac.firebaseio.com/MedCanisterSettings');
+
+	myDataRef.on('value', function(snapshot) {
+		var response = snapshot.val();
+
+		//document.getElementById("bgroup777225641").innerHTML = JSON.stringify(response, undefined, 2);
+		//document.getElementById('txt_name').value
+		$('#txtmedname').val(response.medname);
+    	$('#txtqty').val(response.dosage.qty);
+		var t = '';
+		t = response.dosage.windowstart
+		$('#txtwindowstart').val(t.toString().replace(".", ":").replace("T",""));
+		t = response.dosage.windowend
+		$('#txtwindowend').val(t.toString().replace(".", ":").replace("T",""));
+		$('#txtvolume').val(response.bottle.volume);
+		$('#txtopenedon').val(response.bottle.openedon);
+		$('#txtexpiresindays').val(response.bottle.expiresindays);
+		$('#txtlocation').val(response.location);
+		$('#txtGPSCoordinates').val(response.GPS);
+
+		$('#txttimezone').val(response.timezone);
+		var d = new Date();
+		d.setTime(response.timestamp * 1000);
+		$('#txttimestamp').val(d);
+	});
+
+	$('#txtmedname').keyup(function (e) {
+		//if (e.keyCode == 13) {
+			myDataRef.child('medname').set($('#txtmedname').val());
+			var d = new Date();
+     		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txtqty').keyup(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('dosage').child('qty').set($('#txtqty').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+ 	$('#txtwindowstart').change(function (e) {
+ //if (e.keyCode == 13) {
+	 myDataRef.child('dosage').child('windowstart').set($('#txtwindowstart').val().replace(":", ".") + 'T');
+	 var d = new Date();
+	 myDataRef.child('timestamp').set(d.getTime()/1000.0);
+// }
+ });
+
+ $('#txtwindowend').change(function (e) {
+ //if (e.keyCode == 13) {
+ myDataRef.child('dosage').child('windowend').set($('#txtwindowend').val().replace(":", ".") + 'T');
+ var d = new Date();
+ myDataRef.child('timestamp').set(d.getTime()/1000.0);
+ //}
+ });
+
+	$('#txtvolume').keyup(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('bottle').child('volume').set($('#txtvolume').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txtopenedon').change(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('bottle').child('openedon').set($('#txtopenedon').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txtexpiresindays').keyup(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('bottle').child('expiresindays').set($('#txtexpiresindays').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txtlocation').keyup(function (e) {
+		myDataRef.child('location').set($('#txtlocation').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+
+		if (e.keyCode == 13) {
+			GetCoordinates()
+		}
+	});
+
+	$('#txtGPSCoordinates').keyup(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('GPS').set($('#txtGPSCoordinates').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txttimezone').keyup(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('timezone').set($('#txttimezone').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+
+	function GetCoordinates(){
+	// The Google Geocoding API url used to get the JSON data
+	var geocodingAPI = "https://maps.googleapis.com/maps/api/geocode/json?address=" + $('#txtlocation').val().replace(",","+") + "&key=AIzaSyBxQWBYY1U0-UhYCWZXg3DK6Voy_nPZZSY";
+
+	$.getJSON(geocodingAPI, function (json) {
+
+		// Set the variables from the results array
+		var address = json.results[0].formatted_address;
+		console.log('Address : ', address);
+
+		var latitude = json.results[0].geometry.location.lat;
+		console.log('Latitude : ', latitude);
+
+		var longitude = json.results[0].geometry.location.lng;
+		console.log('Longitude : ', longitude);
+
+		// Set the table td text
+		//$('#address').text(address);
+		$('#latitude').text(latitude);
+		$('#longitude').text(longitude);
+
+		$('#txtGPSCoordinates').val(latitude + ',' + longitude );
+
+		myDataRef.child('GPS').set($('#txtGPSCoordinates').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+
+	});
+	}
+
+</script>
+</body>
+</html>
