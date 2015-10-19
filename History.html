@@ -4,23 +4,40 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Single page template</title>
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<title>History</title>
+
+	<!-- Prevent scaling -->
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
+
+	<!-- Eliminate url and button bars if added to home screen -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- Choose how to handle the phone status bar -->
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- Specify a 320x460 start-up image. -->
+	<link rel="apple-touch-startup-image" href="images/Canister Logo.png" />
+
+	<!-- <link rel="apple-touch-startup-image" href="img/startupiPad.png" />-->
+
+	<!-- Choose a 57x57 image for the icon -->
+	<link rel="apple-touch-icon" href="images/Canister Logo.png" />
+
+
+
 	<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="js/jsrender.js"></script>
 	<script src="https://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-
-	<link href="css/fullcalendar.css" rel="stylesheet">
-	<link href="cssjq/jquery-ui.css" rel="stylesheet">
-	<link href="css/fullcalendar.print.css" rel="stylesheet" media="print">
 	<script src="js/moment.min.js"></script>
-
 	<script src="js/fullcalendar.min.js"></script>
+	<script src='js/gcal.js'></script>
+
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<link href="css/fullcalendar.css" rel="stylesheet">
+	<link href="css/Index.css" rel='stylesheet' type='text/css' />
 
 
 	<style>
-
 		body {
 			margin: 40px 10px;
 			padding: 0;
@@ -37,30 +54,43 @@
 
 	</style>
 
+	<script>
+		function doOnOrientationChange() {
+			// document.getElementById("divTemp").innerHTML = window.orientation;
+
+			if ((window.orientation != 90) && (window.orientation != -90)){
+				document.getElementById('divBlockLandscape').style.left = '-1000px';
+				document.getElementById('divBlockLandscape').style.width = window.innerWidth;
+				document.getElementById('divBlockLandscape').style.height = window.innerHeight;
+				document.getElementById('calendar').style.visibility = 'visible';
+
+			} else {
+				document.getElementById('divBlockLandscape').style.left = '0px';
+				document.getElementById('divBlockLandscape').style.width = window.innerWidth;
+				document.getElementById('divBlockLandscape').style.height = window.innerHeight;
+				document.getElementById('calendar').style.visibility = 'hidden';
+			}
+		}
+
+		window.addEventListener("orientationchange", doOnOrientationChange, false);
+	</script>
 
 </head>
 
-<body>
-
-<script id="GolferTemplate1" type="text/html">
-	{{:key}}: <b>{{:taken}}</b> <i>{{:timestamp}}</i> <br />
-</script>
-
-<script id="GolferTemplate2" type="text/html">
-	<tr>
-		<td>{{:DateID}}</td>
-		<td><b>{{:Taken}}</b></td>
-	</tr>
-</script>
+<body  onload="doOnOrientationChange()">
 
 <br>
 <div id='calendar'></div>
 <br>
 <br>
 <br>
-<br>
-<br>
 <div id="details"></div>
+
+<div id="divBlockLandscape" style="left: -1000px">
+	<div id="center_msg">MedCan only works in portrait mode.<br>Please turn your phone.</div>
+
+</div>
+
 <script>
 
 	function predicatBy(prop){
@@ -77,38 +107,34 @@
 
 	var jsonObj = [];
 	var myDataRef = new Firebase('https://medtrac.firebaseio.com/DailyMedLog');
+	var myLog = new Firebase('https://medtrac.firebaseio.com/MedCanisterLog');
 
-
+	var myDataRefRead = false;
+	var myLogRead = false;
 
 	function ReadHistory(){
 		myDataRef.orderByChild("timestamp").limitToLast(100).once('value', function(snapshot) {
 			var response = snapshot.val();
-
-
 			$.each(response, function(key, value){
-
 				//document.getElementById("GolferTable").innerHTML = JSON.stringify(key, undefined, 2);
-
 				item = {}
 				item ["DateID"] = key;
 				item ["Taken"] = value.taken;
+				item ["Dosage"] = value.dosage;
 				item ["Timestamp"] = value.timestamp;
 				jsonObj.push(item);
-
-
 			});
 
 			console.log("refreshed");
 			console.log(jsonObj);
-
-			//$('#calendar').fullCalendar('updateEvent', jsonObj);
-			//$('#calendar').fullCalendar('addEventSource', jsonObj );
-
 		});
+
+
+
+
 	}
 
-	function LookForChanges()
-	{
+	function LookForChanges(){
 		myDataRef.on('child_added', function(snapshot) {
 			var response = snapshot.val();
 			jsonObj = [];
@@ -131,68 +157,56 @@
 
 	$(document).ready(function() {
 
+		var cd = new Date();
 
-			var	movies =		[
-			{
-				title: 'All Day Event',
-				start: '2015-02-01'
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'title',
+				center: '',
+				right: 'today,prev,next'
 			},
-			{
-				title: 'Long Event',
-				start: '2015-02-07',
-				end: '2015-02-10'
+			defaultDate: cd,
+			theme: false,
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			dayClick: function() {
+				//alert('a day has been clicked!');
 			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: '2015-02-09T16:00:00'
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: '2015-02-16T16:00:00'
-			},
-			{
-				title: 'Conference',
-				start: '2015-02-11',
-				end: '2015-02-13'
-			},
-			{
-				title: 'Meeting',
-				start: '2015-02-12T10:30:00',
-				end: '2015-02-12T12:30:00'
-			},
-			{
-				title: 'Lunch',
-				start: '2015-02-12T12:00:00'
-			},
-			{
-				title: 'Meeting',
-				start: '2015-02-12T14:30:00'
-			},
-			{
-				title: 'Happy Hour',
-				start: '2015-02-12T17:30:00'
-			},
-			{
-				title: 'Dinner',
-				start: '2015-02-12T20:00:00'
-			},
-			{
-				title: 'Birthday Party',
-				start: '2015-02-13T07:00:00'
-			},
-			{
-				title: 'Click for Google',
-				url: 'http://google.com/',
-				start: '2015-02-28'
+			events: jsonObj,
+			googleCalendarApiKey: 'AIzaSyBDY4VDGSUH22Xcppa_BKm5INrBK92gExg',
+			eventSources: [
+				{
+					googleCalendarId: 'c4q3tr9tridb724034h4hp69c4@group.calendar.google.com'
+				}
+			],
+			eventClick: function(calEvent, jsEvent, view) {
+				var ed = new Date();
+				ed.setTime(calEvent.start);
+				//$("#details").html('Event: ' + calEvent.title + '&nbsp;' + 'Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY  + '&nbsp;' + 'View: ' + view.name);
+
+				if (calEvent.url != undefined) {
+					if (calEvent.url.indexOf("google") > -1) {
+						$("#details").html(formatGCalEvent(calEvent));
+					} else {
+						$("#details").html(formatMedCanEvent(calEvent));
+					}
+				} else {
+					$("#details").html(formatMedCanEvent(calEvent));
+				}
+
+
+				// change the border color just for fun
+				//$(this).css('border-color', 'yellow');
+				return false;
 			}
-		]
+		});
 
 
 		myDataRef.orderByChild("timestamp").limitToLast(100).once('value', function(snapshot) {
 			var response = snapshot.val();
 
+			if (myDataRefRead == false){
+				myDataRefRead = true;
 
 			$.each(response, function(key, value){
 
@@ -209,13 +223,13 @@
 					//item ["title"] = "Taken at " + d.toLocaleTimeString();
 					item ["start"] = d;
 					item ["title"] = "Taken";
-					item ["description"] = "Taken 1ml";
+					item ["description"] = "Taken " + value.dosage + "ml";
 					item["color"] = "green";
 				}
 				else {
 					item ["start"] = d;
 					item ["title"] = "Not taken";
-					item ["description"] = "Not taken yet";
+					item ["description"] = "Not taken";
 					item["color"] = "red";
 					item["allDay"] = true;
 				}
@@ -225,12 +239,51 @@
 
 			});
 
-			console.log(response.length);
+			console.log("read medlog");
 			console.log(jsonObj);
 
-			var cd = new Date();
+				$('#calendar').fullCalendar('removeEventSource', jsonObj);
+				$('#calendar').fullCalendar( 'addEventSource', jsonObj );
 
-			$('#calendar').fullCalendar({
+			}
+			//LookForChanges();
+
+		});
+
+		myLog.orderByChild("timestamp").limitToLast(100).once('value', function(snapshot) {
+			var response = snapshot.val();
+
+			if (myLogRead == false) {
+				myLogRead = true;
+				$.each(response, function (key, value) {
+
+					//document.getElementById("GolferTable").innerHTML = JSON.stringify(key, undefined, 2);
+					var d = new Date();
+					d.setTime(value.timestamp * 1000);
+
+					item = {};
+
+					item["start"] = d;
+					item["title"] = value.source;
+					item["description"] = value.message;
+					item["color"] = "orange";
+					item["Timestamp"] = value.timestamp;
+					jsonObj.push(item);
+
+
+				});
+
+				//console.log(response.length);
+				console.log("read errors");
+				console.log(jsonObj);
+
+				//$('#calendar').fullCalendar('rerenderEvents');
+
+				$('#calendar').fullCalendar('removeEventSource', jsonObj);
+				$('#calendar').fullCalendar( 'addEventSource', jsonObj );
+
+				var cd = new Date();
+				/*$('#calendar').fullCalendar({
 				header: {
 					left: 'title',
 					center: '',
@@ -244,27 +297,100 @@
 					//alert('a day has been clicked!');
 				},
 				events: jsonObj,
+				googleCalendarApiKey: 'AIzaSyBDY4VDGSUH22Xcppa_BKm5INrBK92gExg',
+				eventSources: [
+					{
+						googleCalendarId: 'c4q3tr9tridb724034h4hp69c4@group.calendar.google.com'
+					}
+				],
 				eventClick: function(calEvent, jsEvent, view) {
 					var ed = new Date();
 					ed.setTime(calEvent.start);
 					//$("#details").html('Event: ' + calEvent.title + '&nbsp;' + 'Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY  + '&nbsp;' + 'View: ' + view.name);
-					$("#details").html( ed + " <br><br> " +  calEvent.description);
+
+					if (calEvent.url != undefined) {
+						if (calEvent.url.indexOf("google") > -1) {
+							$("#details").html(formatGCalEvent(calEvent));
+						} else {
+							$("#details").html(formatMedCanEvent(calEvent));
+						}
+					} else {
+						$("#details").html(formatMedCanEvent(calEvent));
+					}
+
+
 					// change the border color just for fun
 					//$(this).css('border-color', 'yellow');
-
+					return false;
 				}
-			});
+			}); */
 
 
-			LookForChanges();
-
+				//LookForChanges();
+			}
 		});
 
-
-
-
-
 	});
+
+	function getDate(timeInt){
+		var ed = new Date();
+		ed.setTime(timeInt + 86400000);
+		return ed.toLocaleDateString();
+	}
+
+	function getTime(timeInt){
+		var ed = new Date();
+		ed.setTime(timeInt);
+		return ed.toLocaleString();
+	}
+
+	function formatMedCanEvent(calEvent){
+		var details = "";
+
+		if (calEvent.title == 'Taken'){
+			details = calEvent.description + " at " + getTime(calEvent.start);
+		} else if (calEvent.title == 'Not taken'){
+			details = "Not taken on " + getDate(calEvent.start);
+		} else {
+			details = calEvent.description.replace(". ",".<br>") + "<br>" + getTime(calEvent.start);
+		}
+
+		if (calEvent.url != undefined){
+			details = '<a href = "' + calEvent.url + '">' +details + '</a>';
+		}
+
+		return details;
+	}
+
+	function formatGCalEvent(calEvent){
+		var details = "";
+
+		if (calEvent.url != undefined){
+			details = details + 'Title : <a href = "' + calEvent.url + '">' + calEvent.title + '</a><br>';
+		} else {
+			details = details + "Title : " + calEvent.title + "<br>";
+		}
+		if (calEvent.description != undefined) {
+			details = details + "Description : " + calEvent.description + "<br>";
+		}
+		if (calEvent.start != undefined){
+			details = details + "Start : " + getTime(calEvent.start) + "<br>";
+		}
+		if (calEvent.end != undefined) {
+			details = details + "End : " + getTime(calEvent.end) + "<br>";
+		}
+		if (calEvent.allDay != undefined) {
+			details = details + "AllDay : " + calEvent.allDay + "<br>";
+		}
+
+		if (calEvent.location != undefined) {
+			details = details + "Location : " + calEvent.location + "<br>";
+		}
+
+		return details
+	}
+	// c4q3tr9tridb724034h4hp69c4@group.calendar.google.com
+	// API AIzaSyBDY4VDGSUH22Xcppa_BKm5INrBK92gExg
 
 </script>
 

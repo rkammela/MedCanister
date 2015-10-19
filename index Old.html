@@ -1,0 +1,286 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Saatvik Med Track Dashboard</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Material Mobile UI Kit Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--//theme-style-->
+
+<!----Calender -------->
+  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+  <script src="js/underscore-min.js"></script>
+  <script src= "js/moment-2.2.1.js"></script>
+  <script src="js/clndr.js"></script>
+  <script src="js/site.js"></script>
+<!----End Calender -------->
+
+<link rel="stylesheet" type="text/css" href="css/fd-slider.css">
+<script type="text/javascript" src="js/fd-slider.js"></script>
+
+<!--audio-->
+<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+<!---->
+<script src="js/Chart.js"></script>
+
+<!--timer-->
+<script src="js/jClocksGMT.js"></script>
+<script src="js/jquery.rotate.js"></script>
+<link rel="stylesheet" href="css/jClocksGMT.css">
+<script>
+            $(document).ready(function(){
+                $('#clock_hou').jClocksGMT({offset: '-5', hour24: true});
+                $('#clock_dc').jClocksGMT({offset: '-4', digital: false});
+                $('#clock_india').jClocksGMT({offset: '+5.5'});
+            });
+        </script>
+<!--timer-->	
+ 
+ <link href="css/jquery.nouislider.css" rel="stylesheet">
+<script src="js/jquery.nouislider.js"></script>
+<script>      
+function testOrientation() {
+ // document.getElementById('block_land').style.display = (screen.width<screen.height) ? 'none' : 'block';
+//alert(document.getElementById('imgCanister').width);
+  //  alert(document.getElementById('imgStatus').width);
+    document.getElementById('imgStatus').style.left = ((document.getElementById('imgCanister').width/2) - (document.getElementById('imgStatus').width/2)) + 'px';
+    document.getElementById('imgStatus').style.top = ((document.getElementById('imgCanister').height/2) - (document.getElementById('imgStatus').height/2)) + 'px';
+
+    //alert(document.getElementById('divTempWrapper').width);
+
+    document.getElementById('divTempWrapper').style.left = ((document.getElementById('imgCanister').width/2) - 28)  + 'px';
+    document.getElementById('divTempWrapper').style.top = ((document.getElementById('imgCanister').height) - 40) + 'px';
+}
+function testOrientation1() {
+    // document.getElementById('block_land').style.display = (screen.width<screen.height) ? 'none' : 'block';
+//alert(document.getElementById('imgCanister').width);
+   //  alert(document.getElementById('imgStatus').width);
+    document.getElementById('imgStatus').style.left = ((document.getElementById('imgCanister').width/2) - (document.getElementById('imgStatus').width/2)) + 'px';
+    document.getElementById('imgStatus').style.top = ((document.getElementById('imgCanister').height/2) - (document.getElementById('imgStatus').height/2)) + 'px';
+
+    //alert(document.getElementById('divTempWrapper').width);
+
+    document.getElementById('divTempWrapper').style.left = ((document.getElementById('imgCanister').width/2) - 28)  + 'px';
+    document.getElementById('divTempWrapper').style.top = ((document.getElementById('imgCanister').height) - 40) + 'px';
+}
+</script>
+ 
+</head>
+<body onload="testOrientation1()" >
+<!-- banner #483e52 -->
+
+	   <img id="imgCanister" src="images/Canister.png" style="max-width: 100%; height: auto; width: auto;" class="img-responsive" alt=""/>
+	   <img id="imgStatus" class="img-responsive" src="images/Pending Orange 2.png" style="position:absolute; left:-500px; top:160px;" width="120px" height="120px"  alt=""/>
+
+	   <div id="divTempWrapper" style="position:absolute; left:52px; top:320px; white-space: nowrap; color:#f04818">
+	   <img src="images/thermometer.png" width="20px" height="20px" style="display: inline-block;" class="img-responsive" alt=""/><div id="divTemp" style="position:relative; top:3px; display: inline-block;" >&nbsp;&nbsp;&nbsp;</div>
+	   </div>
+
+
+<div id="messagesDiv"></div>
+
+<div id="divtimestamp"></div>
+<script>
+    var rain = "";
+    var windowstart = 0;
+    var windowend = 0;
+    var windowopen = false;
+    var taken = "";
+    var DebugCurrentDate = " ";
+
+	var myDataRef = new Firebase('https://medtrac.firebaseio.com/MedCanisterState');
+
+	myDataRef.on('value', function(snapshot) {
+		var response = snapshot.val();
+		//document.getElementById("messagesDiv").innerHTML = JSON.stringify(response.timestamp, undefined, 2);
+        //document.getElementById("messagesDiv").innerHTML = response.timestamp;
+		// displayChatMessage(message.bottle, message.temperature);
+
+	document.getElementById("divTemp").innerHTML = response.temperature;
+
+      /*  var d = new Date();
+        d.setTime(response.timestamp * 1000);
+        document.getElementById("divtimestamp").innerHTML = d; */
+
+        if (document.getElementById("divtimestamp").innerHTML != response.date) {
+            document.getElementById("divtimestamp").innerHTML = response.date;
+
+            var myDailyMedLog = new Firebase('https://medtrac.firebaseio.com/DailyMedLog');
+
+            myDailyMedLog.child(response.date).on("value", function(snapshot) {
+
+                var resp = snapshot.val();
+
+                if (resp.taken == "yes"){
+                    var d = new Date();
+                    d.setTime(resp.timestamp * 1000);
+                    document.getElementById("messagesDiv").innerHTML = 'Taken today [' +  d + ']';
+                }
+                else{
+                    document.getElementById("messagesDiv").innerHTML = 'Not taken today';
+                }
+
+            });
+
+
+        };
+
+	if (response.lidopen == true){
+		if (response.tilted == true){
+			document.getElementById("imgCanister").src = "images/Canister Open Tilt.png";
+		}
+		else{
+			document.getElementById("imgCanister").src = "images/Canister Open.png";
+		}
+	}
+	else{
+		if (response.tilted == true){
+			document.getElementById("imgCanister").src = "images/Canister Tilt.png";
+		}
+		else{
+			document.getElementById("imgCanister").src = "images/Canister.png";
+		}
+	}
+
+    //    rain = response.rain;
+
+        if (response.windowopen == true){
+           document.getElementById("imgStatus").className = "objblink";
+            testOrientation();
+        }
+        else{
+            document.getElementById("imgStatus").className = "img-responsive";
+            testOrientation();
+        }
+
+        if (response.taken == "no"){
+            document.getElementById("imgStatus").src = "images/Pending Orange 2.png";
+            testOrientation();
+        }
+        else{
+            document.getElementById("imgStatus").className = "img-responsive";
+            testOrientation();
+            if (response.rain == 'yes'){
+
+                document.getElementById("imgStatus").src = "images/rain.png";
+                testOrientation();
+            }
+            else{
+                document.getElementById("imgStatus").src = "images/Sun.png";
+                testOrientation();
+            }
+
+        }
+
+	});
+
+    testOrientation();
+
+/*
+
+    Date.prototype.yyyymmdd = function() {
+        var yyyy = this.getFullYear().toString();
+        var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based
+        var dd  = this.getDate().toString();
+        return yyyy + mm + dd; // (mm[1]?mm:"0"+mm[0]) + (dd[1]?dd:"0"+dd[0]); // padding
+    };
+
+
+    function getdate(){
+        if (DebugCurrentDate != "x"){
+            currentdate = DebugCurrentDate;
+        }
+        else{
+            currentdate = new Date().yyyymmdd();
+        }
+    }
+
+    var myDebug = new Firebase('https://medtrac.firebaseio.com/Debug');
+    myDebug.child("currentdate").on("value", function(snapshot) {
+        DebugCurrentDate = snapshot.val();
+
+        var myDailyMedLog = new Firebase('https://medtrac.firebaseio.com/DailyMedLog');
+
+        getdate();
+
+        //alert(currentdate);
+
+        myDailyMedLog.child(currentdate).on("value", function(snapshot) {
+
+            var resp = snapshot.val();
+           // document.getElementById("messagesDiv").innerHTML = resp.taken + ' ' + resp.timestamp;
+
+//alert(resp.taken);
+
+            if (resp.taken == "yes"){
+                var d = new Date();
+                d.setTime(resp.timestamp * 1000);
+                document.getElementById("messagesDiv").innerHTML = 'Taken today [' +  d + ']';
+            }
+            else{
+                document.getElementById("messagesDiv").innerHTML = 'Not taken today';
+            }
+
+        });
+
+
+    });
+*/
+
+
+  /*
+    var myMedCanisterSettings = new Firebase('https://medtrac.firebaseio.com/MedCanisterSettings');
+
+    myMedCanisterSettings.child("dosage").on("value", function(snapshot) {
+        var dosage = snapshot.val();
+
+        //document.getElementById("messagesDiv").innerHTML = JSON.stringify(dosage, undefined, 2);;
+
+        windowstart = dosage.windowstart;
+        windowend = dosage.windowend;
+
+    });
+
+
+   setInterval(function(){
+
+        if ((taken == "no") && (windowstart > 0) && (windowend > 0)){
+            var hour = new Date().getHours();
+                if ((windowstart <= hour) && (windowend > hour)){
+                    windowopen = true;
+                    document.getElementById("imgStatus").className = "objblink";
+                }
+                else{
+                    windowopen = false;
+                    document.getElementById("imgStatus").className = "img-responsive";
+                }
+
+            document.getElementById("messagesDiv").innerHTML = windowopen;
+        }
+
+    },5000); */
+
+</script>
+</body>
+</html>
