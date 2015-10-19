@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Settings</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Prevent scaling -->
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
+
+	<!-- Eliminate url and button bars if added to home screen -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- Choose how to handle the phone status bar -->
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- Specify a 320x460 start-up image. -->
+	<link rel="apple-touch-startup-image" href="images/Canister Logo.png" />
+
+	<!-- <link rel="apple-touch-startup-image" href="img/startupiPad.png" />-->
+
+	<!-- Choose a 57x57 image for the icon -->
+	<link rel="apple-touch-icon" href="images/Canister Logo.png" />
+
+	<link href="css/Index.css" rel='stylesheet' type='text/css' />
+
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	<style>
+		.bold {
+			color: #4379cf;  width:100%; font-weight: bold;
+		}
+	</style>
+
+	<script>
+	function doOnOrientationChange() {
+	// document.getElementById("divTemp").innerHTML = window.orientation;
+
+	if ((window.orientation != 90) && (window.orientation != -90)){
+	document.getElementById('divBlockLandscape').style.left = '-1000px';
+	document.getElementById('divBlockLandscape').style.width = window.innerWidth;
+	document.getElementById('divBlockLandscape').style.height = window.innerHeight;
+	} else {
+	document.getElementById('divBlockLandscape').style.left = '0px';
+	document.getElementById('divBlockLandscape').style.width = window.innerWidth;
+	document.getElementById('divBlockLandscape').style.height = window.innerHeight;
+	}
+	}
+
+	window.addEventListener("orientationchange", doOnOrientationChange, false);
+	</script>
 </head>
-<body>
+<body onload="doOnOrientationChange()">
 <!-- horizontal form -->
-<div class="form-horizontal ui-sortable" id="bform973135427" style="position: relative;">
+<div  id="bform973135427" style="position: relative;">
 	<!-- text field -->
-	<div class="control-group" id="bgroup229145434">
-		<label class="control-label" for="txtmedname">
+	<div >
+		<label class="bold"  for="txtmedname">
 			Medication Name:
 		</label>
 		<div class="controls">
@@ -20,7 +64,7 @@
 		</div>
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup726165512">
+	<div class="bold" id="bgroup726165512">
 		<label class="control-label" for="txtvolume">
 			Volume:
 		</label>
@@ -29,7 +73,7 @@
 		</div>
 	</div>
 	<!-- date box -->
-	<div class="control-group" id="bdategroup801215833">
+	<div class="bold" id="bdategroup801215833">
 		<label class="control-label" for="txtopenedon">
 			Bottle Opened On:
 		</label>
@@ -38,7 +82,7 @@
 		</div>
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup260175514" style="position: relative;">
+	<div class="bold" id="bgroup260175514" style="position: relative;">
 		<label class="control-label" for="txtexpiresindays">
 			Expires in:
 		</label>
@@ -47,7 +91,7 @@
 		</div>
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup829185515">
+	<div class="bold" id="bgroup829185515">
 		<label class="control-label" for="txtqty">
 			Dosage:
 		</label>
@@ -55,8 +99,30 @@
 			<input id="txtqty" type="number" min="1" max="50" placeholder="in mm">
 		</div>
 	</div>
+
 	<!-- text field -->
-	<div class="control-group" id="bgroup302195517">
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="txtqty">
+			Temperature lower limit:
+		</label>
+		<div class="controls">
+			<input id="txttemplow" type="number" min="0" max="50" placeholder="in cel">
+		</div>
+	</div>
+
+	<!-- text field -->
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="txtqty">
+			Temperature upper limit:
+		</label>
+		<div class="controls">
+			<input id="txttemphigh" type="number" min="0" max="50" placeholder="in cel">
+		</div>
+	</div>
+
+
+	<!-- text field -->
+	<div class="bold" id="bgroup302195517">
 		<label class="control-label" for="txtwindowstart">
 			What time:
 		</label>
@@ -66,7 +132,7 @@
 		</div>
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup229145434">
+	<div class="bold" id="bgroup229145434">
 		<label class="control-label" for="txtlocation">
 			Location:
 		</label>
@@ -75,7 +141,7 @@
 		</div>
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup229145434">
+	<div class="bold" id="bgroup229145434">
 		<label class="control-label" for="txtGPSCoordinates">
 			GPS Coordinates:
 		</label>
@@ -85,7 +151,7 @@
 
 	</div>
 	<!-- text field -->
-	<div class="control-group" id="bgroup229145434">
+	<div class="bold" id="bgroup229145434">
 		<label class="control-label" for="txttimezone">
 			Time Zone offset in seconds (UTC +/-):
 		</label>
@@ -93,8 +159,67 @@
 			<input id="txttimezone"  disabled="disabled"  type="number" min="-15" max="15" placeholder="difference to UTC">
 		</div>
 	</div>
+
+	<label class="bold" >
+		Notifications
+	</label>
 	<!-- text field -->
-	<div class="control-group" id="bgroup777225641">
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWINS">
+			When it's time to take medicine
+		</label>
+		<div class="controls">
+			<input id="chkWINS" type="checkbox" checked="false"  placeholder="in cel">
+		</div>
+	</div>
+
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWINE">
+			When medicine schedule ends
+		</label>
+		<div class="controls">
+			<input id="chkWINE" type="checkbox" checked="false"  placeholder="in cel">
+		</div>
+	</div>
+
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWT">
+			When taken
+		</label>
+		<div class="controls">
+			<input id="chkWT" type="checkbox" checked="false"  placeholder="in cel">
+		</div>
+	</div>
+
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWM">
+			When missed
+		</label>
+		<div class="controls">
+			<input id="chkWM" type="checkbox" checked="false" placeholder="in cel">
+		</div>
+	</div>
+
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWS">
+			When skipped
+		</label>
+		<div class="controls">
+			<input id="chkWS" type="checkbox" checked="false"  placeholder="in cel">
+		</div>
+	</div>
+
+	<div class="bold" id="bgroup829185515">
+		<label class="control-label" for="chkWLC">
+			When limit crossed
+		</label>
+		<div class="controls">
+			<input id="chkWLC" type="checkbox" checked="false"  placeholder="in cel">
+		</div>
+	</div>
+
+	<!-- text field -->
+	<div class="bold" id="bgroup777225641">
 		<label class="control-label" for="txttimestamp">
 			Changed on:
 		</label>
@@ -105,8 +230,32 @@
 
 
 </div>
+
+<div id="divBlockLandscape" style="left: -1000px">
+	<div id="center_msg">MedCan only works in portrait mode.<br>Please turn your phone.</div>
+
+</div>
+
 <script>
 
+
+	function formatDate(date) {
+		var d = new Date(date),
+				month = '' + (d.getMonth() + 1),
+				day = '' + d.getDate(),
+				year = d.getFullYear();
+
+		if (month.length < 2) month = '0' + month;
+		if (day.length < 2) day = '0' + day;
+
+		return [year, month, day].join('-');
+	}
+
+	/*function formatDate(time){
+		var od = new Date();
+		od.setTime(time * 1000);
+		od.tod
+	}*/
 
 	var myDataRef = new Firebase('https://medtrac.firebaseio.com/MedCanisterSettings');
 
@@ -123,18 +272,35 @@
 		t = response.dosage.windowend
 		$('#txtwindowend').val(t.toString().replace(".", ":").replace("T",""));
 		$('#txtvolume').val(response.bottle.volume);
-		$('#txtopenedon').val(response.bottle.openedon);
+
+		var od = new Date();
+		od.setTime(((response.bottle.openedon - response.timezone) * 1000 ) );
+		$('#txtopenedon').val(formatDate(od));
+
 		$('#txtexpiresindays').val(response.bottle.expiresindays);
 		$('#txtlocation').val(response.location);
 		$('#txtGPSCoordinates').val(response.GPS);
 
+		$('#txttemplow').val(response.templow);
+		$('#txttemphigh').val(response.temphigh);
+
 		$('#txttimezone').val(response.timezone);
+
+
+		$('#chkWINS').attr('checked', response.notify.windowstarts);
+		$('#chkWINE').attr('checked', response.notify.windowends);
+		$('#chkWT').attr('checked', response.notify.whentaken);
+		$('#chkWM').attr('checked', response.notify.whenmissed);
+		$('#chkWS').attr('checked', response.notify.whenskipped);
+		$('#chkWLC').attr('checked', response.notify.whenlimitcrossed);
+
+
 		var d = new Date();
 		d.setTime(response.timestamp * 1000);
 		$('#txttimestamp').val(d);
 	});
 
-	$('#txtmedname').keyup(function (e) {
+	$('#txtmedname').change(function (e) {
 		//if (e.keyCode == 13) {
 			myDataRef.child('medname').set($('#txtmedname').val());
 			var d = new Date();
@@ -142,7 +308,7 @@
 		//}
 	});
 
-	$('#txtqty').keyup(function (e) {
+	$('#txtqty').change(function (e) {
 		//if (e.keyCode == 13) {
 		myDataRef.child('dosage').child('qty').set($('#txtqty').val());
 		var d = new Date();
@@ -166,7 +332,7 @@
  //}
  });
 
-	$('#txtvolume').keyup(function (e) {
+	$('#txtvolume').change(function (e) {
 		//if (e.keyCode == 13) {
 		myDataRef.child('bottle').child('volume').set($('#txtvolume').val());
 		var d = new Date();
@@ -176,13 +342,15 @@
 
 	$('#txtopenedon').change(function (e) {
 		//if (e.keyCode == 13) {
-		myDataRef.child('bottle').child('openedon').set($('#txtopenedon').val());
+		var od = new Date($('#txtopenedon').val());
+		//alert((od.getTime()/1000) + ( $('#txttimezone').val()/1));
+		myDataRef.child('bottle').child('openedon').set((od.getTime()/1000));
 		var d = new Date();
 		myDataRef.child('timestamp').set(d.getTime()/1000.0);
 		//}
 	});
 
-	$('#txtexpiresindays').keyup(function (e) {
+	$('#txtexpiresindays').change(function (e) {
 		//if (e.keyCode == 13) {
 		myDataRef.child('bottle').child('expiresindays').set($('#txtexpiresindays').val());
 		var d = new Date();
@@ -190,17 +358,17 @@
 		//}
 	});
 
-	$('#txtlocation').keyup(function (e) {
+	$('#txtlocation').change(function (e) {
 		myDataRef.child('location').set($('#txtlocation').val());
 		var d = new Date();
 		myDataRef.child('timestamp').set(d.getTime()/1000.0);
 
-		if (e.keyCode == 13) {
+		//if (e.keyCode == 13) {
 			GetCoordinates()
-		}
+		//}
 	});
 
-	$('#txtGPSCoordinates').keyup(function (e) {
+	$('#txtGPSCoordinates').change(function (e) {
 		//if (e.keyCode == 13) {
 		myDataRef.child('GPS').set($('#txtGPSCoordinates').val());
 		var d = new Date();
@@ -208,13 +376,67 @@
 		//}
 	});
 
-	$('#txttimezone').keyup(function (e) {
+	$('#txttimezone').change(function (e) {
 		//if (e.keyCode == 13) {
 		myDataRef.child('timezone').set($('#txttimezone').val());
 		var d = new Date();
 		myDataRef.child('timestamp').set(d.getTime()/1000.0);
 		//}
 	});
+
+	$('#txttemplow').change(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('templow').set($('#txttemplow').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#txttemphigh').change(function (e) {
+		//if (e.keyCode == 13) {
+		myDataRef.child('temphigh').set($('#txttemphigh').val());
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+		//}
+	});
+
+	$('#chkWINS').change(function() {
+		myDataRef.child('notify').child('windowstarts').set($('#chkWINS').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+	$('#chkWINE').change(function() {
+		myDataRef.child('notify').child('windowends').set($('#chkWINE').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+	$('#chkWT').change(function() {
+		myDataRef.child('notify').child('whentaken').set($('#chkWT').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+	$('#chkWM').change(function() {
+		myDataRef.child('notify').child('whenmissed').set($('#chkWM').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+	$('#chkWS').change(function() {
+		myDataRef.child('notify').child('whenskipped').set($('#chkWS').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+	$('#chkWLC').change(function() {
+		myDataRef.child('notify').child('whenlimitcrossed').set($('#chkWLC').is(':checked'));
+		var d = new Date();
+		myDataRef.child('timestamp').set(d.getTime()/1000.0);
+	});
+
+
 
 
 	function GetCoordinates(){
@@ -244,8 +466,35 @@
 		var d = new Date();
 		myDataRef.child('timestamp').set(d.getTime()/1000.0);
 
+		GetTimeZone()
 	});
 	}
+
+	function GetTimeZone(){
+		var d = new Date();
+
+		var timezoneAPI = "https://maps.googleapis.com/maps/api/timezone/json?location=" + $('#txtGPSCoordinates').val() + "&timestamp=" + (d.getTime()/1000.0) + "&key=AIzaSyBxQWBYY1U0-UhYCWZXg3DK6Voy_nPZZSY";
+
+		console.log(timezoneAPI);
+
+		$.getJSON(timezoneAPI, function (json) {
+
+			console.log(JSON.stringify(json, undefined, 2));
+
+			// Set the variables from the results array
+			var timezone = json.dstOffset + json.rawOffset;
+			console.log(timezone);
+
+			$('#txttimezone').val(timezone);
+
+			myDataRef.child('timezone').set($('#txttimezone').val());
+			var d = new Date();
+			myDataRef.child('timestamp').set(d.getTime()/1000.0);
+
+		});
+
+	}
+
 
 </script>
 </body>

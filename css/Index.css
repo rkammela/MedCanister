@@ -1,0 +1,57 @@
+html, body{
+    font-family: 'Roboto-Regular';
+    font-size: 100%;
+    background: #4D4D4D;
+}
+
+#messagesDiv{position: relative;top: 50%; color: #4379cf; text-align:center;  width:100%; font-weight: bold; }
+
+#divBlockLandscape{position:absolute; top: 0px; left: 0px; color: #4379cf; text-align:center;  background-color: lightgray; width:100%; height: 100%; font-weight: bold; }
+#center_msg{position: relative; top: 100px;transform: translateY(-50%); text-align:center;  width:100%;}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.objblink {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease-in-out;
+
+    -moz-animation-direction: normal;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: blink;
+    -moz-animation-timing-function: ease-in-out;
+}
